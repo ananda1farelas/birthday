@@ -102,11 +102,11 @@
 
 <!-- MUSIC -->
 <audio id="bg-music" loop>
-    <source src="musik/OneOlny.mp3" type="audio/mp3">
+    <source src="audio/OneOnly.mp3" type="audio/mp3">
 </audio>
 
-<button onclick="playMusic()" class="music-btn">
-🎵 Play Music
+<button onclick="toggleMusic()" class="music-btn">
+🎵 Play/Stop Music
 </button>
 
 <script>
@@ -136,8 +136,14 @@ setInterval(()=>{
 },800);
 
 // MUSIC
-function playMusic(){
-    document.getElementById("bg-music").play();
+function toggleMusic() {
+    const music = document.getElementById("bg-music");
+
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
 }
 </script>
 
