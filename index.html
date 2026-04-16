@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="floating-hearts" id="hearts-container"></div>
+
+<section class="hero">
+    <h1>🎂 Happy Birthday</h1>
+    <h1>✨❤️ Sayangku yang ke 21 ❤️✨</h1>
+
+    <!-- BALLOONS -->
+    <div class="balloon" style="left:5%;background:#ff3d3d;"></div>
+    <div class="balloon" style="left:15%;background:#ffd93d;"></div>
+    <div class="balloon" style="left:25%;background:#6bcB77;"></div>
+    <div class="balloon" style="left:35%;background:#4d96ff;"></div>
+    <div class="balloon" style="left:50%;background:#ff6b9d;"></div>
+    <div class="balloon" style="left:65%;background:#c44569;"></div>
+    <div class="balloon" style="left:75%;background:#f8b500;"></div>
+    <div class="balloon" style="left:85%;background:#00d2d3;"></div>
+    <div class="balloon" style="left:95%;background:#ff9ff3;"></div>
+
+    <div class="scroll-indicator"></div>
+</section>
+
+<!-- MESSAGE -->
+<section class="message">
+    <h2>Untuk Ayyku</h2>
+    <p>
+        Di umur ke-21 ini, semoga kamu makin bahagia, makin sukses,
+        dilancarkan rejekinya, makin sayang sama aku, dan makin kuat
+        dalam menjalani kehidupan ini.<br><br>
+
+        Aku bangga banget sama kamu karena udah bisa ngelewatin banyak hal sejauh ini ❤️<br><br>
+
+        Semoga dengan hadiah online ini kamu suka ya ayy,
+        walaupun sederhana, nanti ada hadiah offline juga 😆
+    </p>
+
+    <h2>SELAMAT ULANG TAHUN KE-21 SAYANGKU ❤️</h2>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+    <h2>📸 Our Memories</h2>
+    <div class="photos">
+        <div class="photo-container">
+            <img src="image/foto1.jpg" alt="">
+            <div class="photo-overlay"><p>ini pas kita lagi </p></div>
+        </div>
+        <div class="photo-container">
+            <img src="image/foto2.jpg" alt="">
+            <div class="photo-overlay"><p>✨ Kenangan</p></div>
+        </div>
+        <div class="photo-container">
+            <img src="image/foto3.jpg" alt="">
+            <div class="photo-overlay"><p>🌟 Bersama</p></div>
+        </div>
+        <div class="photo-container">
+            <img src="image/foto4.jpg" alt="">
+            <div class="photo-overlay"><p>❤️ Cinta</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- MUSIC -->
+<audio id="bg-music" loop>
+    <source src="musik/OneOlny.mp3" type="audio/mp3">
+</audio>
+
+<button onclick="playMusic()" class="music-btn">
+🎵 Play Music
+</button>
+
+<script>
+// CONFETTI
+var colors = ['#ff0080','#7928ca','#4d96ff','#ffd93d','#6bcB77'];
+
+for(var i=0;i<40;i++){
+    var c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(c);
+}
+
+// HEARTS
+var container=document.getElementById('hearts-container');
+
+setInterval(()=>{
+    var h=document.createElement('div');
+    h.className='heart';
+    h.innerHTML='❤️';
+    h.style.left=Math.random()*100+"vw";
+    container.appendChild(h);
+
+    setTimeout(()=>h.remove(),6000);
+},800);
+
+// MUSIC
+function playMusic(){
+    document.getElementById("bg-music").play();
+}
+</script>
+
+</body>
+</html>
