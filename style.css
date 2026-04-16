@@ -30,7 +30,7 @@ body{
 
 /* BALLOON */
 .balloon{
-    position:absolute;
+    position:fixed;
     bottom:-100px;
     width:40px;
     height:60px;
@@ -130,4 +130,21 @@ body{
     background:#ff4da6;
     color:white;
     cursor:pointer;
+}
+
+.video-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #320615, #ffe4e1);
+}
+
+.video-section h2 {
+    margin-bottom: 20px;
+}
+
+.video-section video {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
